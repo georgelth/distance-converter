@@ -3,7 +3,7 @@ import tkinter as tk
 import ttkbootstrap as ttk
 
 # window
-window = tk.Tk()
+window = ttk.Window(themename = "journal")
 window.title("converter")
 window.geometry("300x150")
 
