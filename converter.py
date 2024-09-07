@@ -14,9 +14,9 @@ title_label.pack()
 input_frame = ttk.Frame(master = window)
 entry = ttk.Entry(master = input_frame)
 button = ttk.Button(master = input_frame, text = "convert")
-entry.pack()
-button.pack()
-input_frame.pack()
+entry.pack(side = "left", padx = 10)
+button.pack(side = "left")
+input_frame.pack(pady = 10)
 
 # run
 window.mainloop()
