@@ -8,6 +8,9 @@ window = ttk.Window(themename = "darkly")
 window.title("converter")
 window.geometry("400x200")
 
+# global variables
+mi_to_km = True
+
 # functions
 def convert():
     mile_input = entry_int.get()
@@ -35,8 +38,8 @@ photo = ImageTk.PhotoImage(scaled_image)
 image_button = ttk.Button(master = input_frame, image = photo, command = switch_conversion)
 
 entry.pack(side = "left", padx = 10)
-image_button.pack(side = "left", padx = 10)
-button.pack(side = "left")
+image_button.pack(side = "left")
+button.pack(side = "left", padx = 10)
 input_frame.pack(pady = 10)
 
 # output
