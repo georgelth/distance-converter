@@ -30,11 +30,12 @@ entry = ttk.Entry(master = input_frame, textvariable = entry_int)
 button = ttk.Button(master = input_frame, text = "convert", command = convert)
 
 image = Image.open("assets/conversion.png")
-photo = ImageTk.PhotoImage(image)
+scaled_image = image.resize((20, 20), Image.Resampling.BOX)
+photo = ImageTk.PhotoImage(scaled_image)
 image_button = ttk.Button(master = input_frame, image = photo, command = switch_conversion)
 
 entry.pack(side = "left", padx = 10)
-image_button.pack(side = "left")
+image_button.pack(side = "left", padx = 10)
 button.pack(side = "left")
 input_frame.pack(pady = 10)
 
