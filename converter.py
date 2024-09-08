@@ -14,9 +14,15 @@ mi_to_km = True
 
 # functions
 def convert():
-    mile_input = entry_int.get()
-    km_output = mile_input * 1.61
-    output_string.set(km_output)
+    global mi_to_km
+    if mi_to_km == True:
+        mile_input = entry_int.get()
+        km_output = mile_input * 1.61
+        output_string.set(km_output)
+    else:
+        mile_input = entry_int.get()
+        km_output = round(mile_input / 1.61, 2)
+        output_string.set(km_output)
 
 def switch_conversion():
     global mi_to_km
@@ -26,7 +32,6 @@ def switch_conversion():
     else:
         mi_to_km = True
         title_text.set("miles to kilometers")
-    print("switch conversion")
 
 # title
 title_text = tk.StringVar(value = "miles to kilometers")
