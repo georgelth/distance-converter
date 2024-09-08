@@ -9,6 +9,7 @@ window.title("converter")
 window.geometry("400x200")
 
 # global variables
+title_text = "miles to kilometers"
 mi_to_km = True
 
 # functions
@@ -18,10 +19,18 @@ def convert():
     output_string.set(km_output)
 
 def switch_conversion():
+    global mi_to_km
+    if mi_to_km == True:
+        mi_to_km = False
+        title_text.set("kilometers to miles")
+    else:
+        mi_to_km = True
+        title_text.set("miles to kilometers")
     print("switch conversion")
 
 # title
-title_label = tk.Label(master = window, text = "miles to kilometers", font = "Calibri 24 bold")
+title_text = tk.StringVar(value = "miles to kilometers")
+title_label = tk.Label(master = window, textvariable = title_text, font = "Calibri 24 bold")
 title_label.pack()
 
 # input field
